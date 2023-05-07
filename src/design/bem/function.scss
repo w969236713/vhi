@@ -1,4 +1,4 @@
-@use "./config.scss" as config;
+@use "config";
 
 //BEM 支持函数
 @function selectorToString($selector) {

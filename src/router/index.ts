@@ -1,9 +1,12 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import { basicRoutes } from '@/router/routes'
+import type { App } from 'vue'
 
 const router = createRouter({
   history: createWebHashHistory(),
   routes: basicRoutes
 })
-console.log(basicRoutes)
-export default router
+
+export const setupRouter = (app: App<Element>) => {
+  app.use(router)
+}

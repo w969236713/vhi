@@ -1,12 +1,17 @@
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 
+import 'normalize.css'
 import App from './App.vue'
-import router from './router'
+import { setupRouter } from '@/router'
 
-const app = createApp(App)
+function bootstrap() {
+  const app = createApp(App)
+  app.use(createPinia())
 
-app.use(createPinia())
-app.use(router)
+  //设置路由
+  setupRouter(app)
+  app.mount('#app')
+}
 
-app.mount('#app')
+bootstrap()

@@ -32,7 +32,7 @@ export default defineConfig({
         // Auto import icon components
         // 自动导入图标组件
         IconsResolver({
-          prefix: 'Icon'
+          // prefix: 'Icon'
         })
       ],
 
@@ -44,6 +44,7 @@ export default defineConfig({
         // Auto register icon components
         // 自动注册图标组件
         IconsResolver({
+          prefix: false,
           enabledCollections: ['ep']
         }),
         // Auto register Element Plus components
@@ -76,7 +77,7 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
-        additionalData: '@use "@/design/common/var.scss" as *;'
+        additionalData: '@use "@/design/bem/index.scss" as *;'
       }
     }
   }
