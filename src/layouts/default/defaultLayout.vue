@@ -1,18 +1,13 @@
 <template>
-  <div class="common-layout">
-    <el-container>
-      <el-aside>Aside</el-aside>
-      <el-container>
-        <el-header>Header</el-header>
-        <el-main>
-          <RouterView />
-        </el-main>
-        <el-footer>Footer</el-footer>
-      </el-container>
-    </el-container>
+  <div :class="ns.b()">
+    <RouterView />
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { useNamespace } from '@/hooks/use-namespace'
 
-<style scoped></style>
+const ns = useNamespace('layout')
+</script>
+
+<style scoped lang="scss"></style>
